@@ -3,6 +3,7 @@ require('model/database.php');
 require('model/quote_db.php');
 require('model/author_db.php');
 require('model/category_db.php');
+require('quote-admin.php);
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
