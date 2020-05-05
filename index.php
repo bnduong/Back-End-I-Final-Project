@@ -3,7 +3,6 @@ require('model/database.php');
 require('model/quote_db.php');
 require('model/author_db.php');
 require('model/category_db.php');
-require('quote-admin.php);
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -38,6 +37,7 @@ return $array["categoryName"] == $category_Name;
 $authors = get_authors();
 $categories = get_categories();
 include('view/header.php');
+include('quote-admin.php');
 include('quote_list.php');
 include('quote-api.php');
 include('view/footer.php');
