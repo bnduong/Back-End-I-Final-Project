@@ -21,13 +21,13 @@ setcookie($name, '', $expire, $path, $domain, $secure, $httponly);
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zippy Used Autos</title>
-<link rel="stylesheet" type="text/css" href="view/css/main.css" />
+<title>Famous Quotes</title>
+<link rel="stylesheet" type="text/css" href="view/css/style.css" />
 </head>
 <body>
 <header>
 <div id="pageTitle">
-<h1>Zippy Used Autos</h1>
+<h1>Famous Quotes</h1>
 </div>
 <div id="pageLinks">
 <p></p>
@@ -36,7 +36,7 @@ setcookie($name, '', $expire, $path, $domain, $secure, $httponly);
 <body>
 <h1>Thank you for signing out, <?php echo $firstname ?>.</h1>
 <p>
-<a href="index.php">Click here</a> to view our vehicle list.
+<a href="index.php">Click here</a> to view our quote list.
 </p>
 <br>
 </body>

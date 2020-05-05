@@ -1,5 +1,5 @@
 <div id="footer">
-<p>&copy; <?php echo date("Y"); ?> Zippy Used Autos</p>
+<p>&copy; <?php echo date("Y"); ?>Famous Quotes</p>
 </footer>
 </div>
 </body>

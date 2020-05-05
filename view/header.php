@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zippy Used Autos</title>
+<title>Famous Quotes</title>
 <link rel="stylesheet" type="text/css" href="view/css/style.css" />
 </head>
 <body>
 <header>
 <div id="pageTitle">
-<h1>Zippy Used Autos</h1>
+<h1>Famous Quotes</h1>
 </div>
 <div id="pageLinks">
 <?php 

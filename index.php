@@ -1,49 +1,45 @@
 <?php
 require('model/database.php');
-require('model/vehicle_db.php');
-require('model/type_db.php');
-require('model/class_db.php');
-require('model/make_db.php');
+require('model/quote_db.php');
+require('model/author_db.php');
+require('model/category_db.php');
+require('model/admin_db.php');
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
 $action = filter_input(INPUT_GET, 'action');
 if ($action == NULL) {
-$action = 'list_vehicles';
+$action = 'list_quotes';
 }
 } else {
-$action = 'list_vehicles';
+$action = 'list_quotes';
 }
-if ($action == 'list_vehicles') {
-$type_id = filter_input(INPUT_GET, 'type_id', FILTER_VALIDATE_INT);
-$class_id = filter_input(INPUT_GET, 'class_id', FILTER_VALIDATE_INT);
-$make_name = filter_input(INPUT_GET, 'make');
+if ($action == 'list_quotes') {
+$authorId = filter_input(INPUT_GET, 'authorId', FILTER_VALIDATE_INT);
+$categoryId = filter_input(INPUT_GET, 'categoryId', FILTER_VALIDATE_INT);
+$quoteId = filter_input(INPUT_GET, 'quoteId', FILTER_VALIDATE_INT);
+$quote_Text = filter_input(INPUT_GET, 'quote_Text', FILTER_VALIDATE_INT);
 $sort = filter_input(INPUT_GET, 'sort');
-$sort = ($sort == "year") ? "year" : "price";
-$class_name = get_class_name($class_id);
-$type_name = get_type_name($type_id);
+$sort = ($sort == "author") ? "author" : "category";
+$category_Name = get_category_name($categoryId);
+$author_Name = get_author_name($authorId);
 
-$vehicles = get_all_vehicles($sort);
-if ($make_name != NULL && $make_name != FALSE) {
-$vehicles = array_filter($vehicles, function($array) use ($make_name) {
-return $array["make"] == $make_name;
+$quotes = get_all_quotes($sort);
+if ($authorId != NULL && $authorId != FALSE) {
+$quotes = array_filter($quotes, function($array) use ($author_Name) {
+return $array["authorName"] == $author_Name;
 });
 }
-if ($type_id != NULL && $type_id != FALSE) {
-$vehicles = array_filter($vehicles, function($array) use ($type_name) {
-return $array["typeName"] == $type_name;
+if (categoryId != NULL && $categoryId != FALSE) {
+$quotes = array_filter($quotes, function($array) use ($category_Name) {
+return $array["categoryName"] == $category_Name;
 });
 }
-if ($class_id != NULL && $class_id != FALSE) {
-$vehicles = array_filter($vehicles, function($array) use ($class_name) {
-return $array["className"] == $class_name;
-});
-}
-$types = get_types();
-$classes = get_classes();
-$makes = get_makes();
+$authors = get_authors();
+$categories = get_categories();
 include('view/header.php');
-include('vehicle_list.php');
+include('quote_list.php');
+include('quote-api.php');
 include('view/footer.php');
 }
 ?> 
