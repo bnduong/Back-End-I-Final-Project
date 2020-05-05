@@ -37,7 +37,6 @@ return $array["categoryName"] == $category_Name;
 $authors = get_authors();
 $categories = get_categories();
 include('view/header.php');
-include('quote-admin.php');
 include('quote_list.php');
 include('view/footer.php');
 }
