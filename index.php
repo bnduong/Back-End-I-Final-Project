@@ -39,7 +39,6 @@ $categories = get_categories();
 include('view/header.php');
 include('quote-admin.php');
 include('quote_list.php');
-include('quote-api.php');
 include('view/footer.php');
 }
 ?> 
